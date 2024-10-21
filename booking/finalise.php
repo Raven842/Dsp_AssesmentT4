@@ -37,7 +37,7 @@
 						<div class="form-header">
 							<h1>Make your reservation</h1>
 						</div>
-						<form>
+						<form action="./php/booking.php" mehtod="POST">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
@@ -64,31 +64,42 @@
 										<span class="select-arrow"></span>
 									</div>
 								</div>
+
 								<div class="col-md-3">
 									<div class="form-group">
-										<span class="form-label">Adults</span>
+										<span class="form-label">Room Type</span>
 										<select class="form-control">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
+											<option>Single</option>
+											<option>Double</option>
+											<option>Deluxe</option>
 										</select>
 										<span class="select-arrow"></span>
 									</div>
 								</div>
-								<div class="col-md-3">
+								<div class="col-md-6">
 									<div class="form-group">
-										<span class="form-label">Children</span>
-										<select class="form-control">
-											<option>0</option>
-											<option>1</option>
-											<option>2</option>
-										</select>
-										<span class="select-arrow"></span>
+										<span class="form-label">Email</span>
+										<input class="form-control" type="email" required>
 									</div>
+									<span class="in-out hidden-xs hidden-sm">&#8652;</span>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Name</span>
+										<input class="form-control" type="text" required>
+									</div>
+									<span class="in-out hidden-xs hidden-sm">&#8652;</span>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Card Number</span>
+										<input class="form-control" type="number" required>
+									</div>
+									<span class="in-out hidden-xs hidden-sm">&#8652;</span>
 								</div>
 								<div class="col-md-3">
 									<div class="form-btn">
-										<button class="submit-btn">Check availability</button>
+										<button class="submit-btn">Submit your booking</button>
 									</div>
 								</div>
 							</div>
