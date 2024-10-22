@@ -1,0 +1,5 @@
+{
+    "require": {
+        "jlorente/php-credit-cards": "*"
+    }
+}
