@@ -18,15 +18,6 @@ function get_id($data) {
     $id++;
     return $id;
 }
-function avail_check($roomType, $data) {
-    $numAvail = $data->query("select * from room_Avail where type='$roomType'")->fetch(PDO::FETCH_ASSOC);
-    if ($numAvail > 0) {
-        $isAvail = true;
-    } else {
-        $isAvail = false;
-    }
-    return $isAvail;
-}
 function card_check($num) {
     $validator = new CreditCardValidator();
     return $validator->isValid($num);
