@@ -65,17 +65,7 @@
 									</div>
 								</div>
 
-								<div class="col-md-3">
-									<div class="form-group">
-										<span class="form-label">Room Type</span>
-										<select class="form-control">
-											<option>Single</option>
-											<option>Double</option>
-											<option>Deluxe</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
+								
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Email</span>
