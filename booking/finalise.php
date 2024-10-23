@@ -37,7 +37,7 @@
 						<div class="form-header">
 							<h1>Make your reservation</h1>
 						</div>
-						<form action="./php/booking.php" mehtod="POST">
+						<form action="../php/booking.php" mehtod="POST">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
@@ -53,19 +53,6 @@
 									</div>
 								</div>
 							</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<span class="form-label">Number of rooms</span>
-										<select class="form-control">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-
-								
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Email</span>
@@ -83,7 +70,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Card Number</span>
-										<input class="form-control" type="number" required>
+										<input class="form-control" type="text" required>
 									</div>
 									<span class="in-out hidden-xs hidden-sm">&#8652;</span>
 								</div>
