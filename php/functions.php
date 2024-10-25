@@ -55,3 +55,9 @@ function client_info($name, $email, $in, $out, $num) {
     checkin($in, $out);
     card_update($num);
 }
+// staff based functions
+function user_check ($uname) {
+    global $db;
+    $user = $db->query("select * from staff_login where u_Name = ?", [$uname])->fetch(PDO::FETCH_ASSOC);
+    return $user;
+}
