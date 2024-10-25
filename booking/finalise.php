@@ -37,58 +37,43 @@
 						<div class="form-header">
 							<h1>Make your reservation</h1>
 						</div>
-						<form>
+						<form action="booking.php" method="post">
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Check In</span>
-										<input class="form-control" type="date" required>
+										<input class="form-control" type="date" name="in"required>
 									</div>
 									<span class="in-out hidden-xs hidden-sm">&#8652;</span>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Check out</span>
-										<input class="form-control" type="date" required>
+										<input class="form-control" type="date" name="out" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Name</span>
+										<input class="form-control" type="text" name="name" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Email</span>
+										<input class="form-control" type="email" name="mail" required>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Card Number</span>
+										<input class="form-control" type="text" name="num" required>
 									</div>
 								</div>
 							</div>
 								<div class="col-md-3">
-									<div class="form-group">
-										<span class="form-label">Number of rooms</span>
-										<select class="form-control">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<span class="form-label">Adults</span>
-										<select class="form-control">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-								<div class="col-md-3">
-									<div class="form-group">
-										<span class="form-label">Children</span>
-										<select class="form-control">
-											<option>0</option>
-											<option>1</option>
-											<option>2</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-								<div class="col-md-3">
 									<div class="form-btn">
-										<button class="submit-btn">Check availability</button>
+										<button class="submit-btn">Submit booking</button>
 									</div>
 								</div>
 							</div>

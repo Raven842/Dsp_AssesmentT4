@@ -1,0 +1,81 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "476983c75e1207715741a025abb6e997",
+    "packages": [
+        {
+            "name": "jlorente/php-credit-cards",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jlorente/php-credit-cards.git",
+                "reference": "22870dfea8118e09664257c6dc718c815627d708"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jlorente/php-credit-cards/zipball/22870dfea8118e09664257c6dc718c815627d708",
+                "reference": "22870dfea8118e09664257c6dc718c815627d708",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3",
+                "php": ">=7.2",
+                "phpunit/phpunit": "^8.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jlorente\\CreditCards\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "José Lorente",
+                    "email": "jose.lorente.martin@gmail.com"
+                }
+            ],
+            "description": "A PHP package to perform operations on debit and credit cards like format, validate brand, number and Luhn algorithm. It validates popular brands like Visa, Mastercard, American Express, etc.",
+            "keywords": [
+                "american express",
+                "card",
+                "cards",
+                "creditcard",
+                "creditcards",
+                "debit",
+                "diners club",
+                "discover",
+                "jlorente",
+                "mastercard",
+                "php",
+                "troy",
+                "unionpay",
+                "validate",
+                "visa"
+            ],
+            "support": {
+                "issues": "https://github.com/jlorente/php-credit-cards/issues",
+                "source": "https://github.com/jlorente/php-credit-cards/tree/1.0.4"
+            },
+            "time": "2024-10-08T07:58:55+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}
