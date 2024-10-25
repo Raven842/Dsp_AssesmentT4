@@ -1,6 +1,6 @@
 <?php 
 // requires function
-require "../php/functions.php";
+require "functions.php";
 
 var_dump($_POST);
 die ();
