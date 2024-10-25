@@ -1,5 +1,5 @@
 <?php
-
+header('Content-type: text/plain; charset=utf-8');
 use Jlorente\CreditCards\CreditCardValidator;
 // Require to connect database
 require "database.php";

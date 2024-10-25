@@ -1,5 +1,6 @@
 <?php
 // connect to database; require in all files
+header('Content-type: text/plain; charset=utf-8');
 class Database {
     public $connection;
     
