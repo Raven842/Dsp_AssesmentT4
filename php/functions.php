@@ -7,36 +7,45 @@ require "vendor/jlorente/php-credit-cards/src/CreditCardTypeConfig.php";
 require "vendor/jlorente/php-credit-cards/src/CreditCardTypeConfigList.php";
 require "vendor/jlorente/php-credit-cards/src/CreditCardValidator.php";
 <<<<<<< HEAD
+<<<<<<< HEAD
 // declares database for functions to interact with below
 $db = new Database();
 =======
 global $db = new Database();
 >>>>>>> 7bf7233 (Finished guest side of functions.php)
+=======
+$db = new Database();
+>>>>>>> parent of 7bf7233 (Finished guest side of functions.php)
 // get current guest ID
-function get_id() {
-    $id = $db->query("select * from guest_Contact order by guest_ID desc limit 1")->fetch(PDO::FETCH_NUM);
-    $id = $id[0]++;
+function get_id($data) {
+    $id = $data->query("select * from payment order by guest_ID desc limit 1")->fetch(PDO::FETCH_NUM);
+    $id = $id[0];
+    $id++;
     return $id;
 }
 function card_check($num) {
     $validator = new CreditCardValidator();
     return $validator->isValid($num);
 }
-function card_update($num) {
+function card_update($num, $data) {
     //MUST CALL AFTER USER ADDED TO CONTACT
     $exists = false;
-    // Note cannot contain sql injection if cardnum is valid thus further sanitisation not needed
     $valid = card_check($num);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     $id = get_id();
 >>>>>>> 7bf7233 (Finished guest side of functions.php)
+=======
+    $id = get_id($data);
+>>>>>>> parent of 7bf7233 (Finished guest side of functions.php)
     if ($valid == true) {
-        if ($db->query("select * from payment where card_Num='$num'")->fetch(PDO::FETCH_NUM) == 0) {
+        if ($data->query("select * from payment where card_Num='$num'")->fetch(PDO::FETCH_NUM) == 0) {
            $exists = true;
         }           
     }
     if ($exists) {
+<<<<<<< HEAD
 <<<<<<< HEAD
        $db->query("insert into payment (card_Num) value ($num)");
 =======
@@ -78,3 +87,9 @@ function name_update($name, $email) {
     $data->query("insert into guest_Contact (name, email) values ($name, $email)");
 >>>>>>> 7bf7233 (Finished guest side of functions.php)
 }
+=======
+       $data->query("insert into payment (guest_ID, card_Num) values ($id, $num)");
+    }
+    
+}
+>>>>>>> parent of 7bf7233 (Finished guest side of functions.php)
