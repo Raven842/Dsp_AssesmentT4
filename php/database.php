@@ -8,14 +8,14 @@ class Database {
             "host" => "127.0.0.1",
             "dbname" => "Sunset_Resort",
             "port" => "3306",
-            "user" => "root",
+            "user" => "root"
         ];
         $dsn = 'mysql:' . http_build_query( $config, '', ';');
         $this->connection = new PDO($dsn);
     }
-    public function query($q) {
+    public function query($q, $params = []) {
         $statement = $this->connection->prepare($q);
-        $statement->execute();    
+        $statement->execute($params);    
         return $statement;    
     }
 }
