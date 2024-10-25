@@ -2,94 +2,56 @@
 // Require to connect database
 require "database.php";
 // for credit card validation
-use Jlorente\CreditCards\CreditCardValidator;
-require "vendor/jlorente/php-credit-cards/src/CreditCardTypeConfig.php";
-require "vendor/jlorente/php-credit-cards/src/CreditCardTypeConfigList.php";
-require "vendor/jlorente/php-credit-cards/src/CreditCardValidator.php";
-<<<<<<< HEAD
-<<<<<<< HEAD
+require "CreditCardTypeConfig.php";
+require "CreditCardTypeConfigList.php";
+require "CreditCardValidator.php";
+
+
 // declares database for functions to interact with below
 $db = new Database();
-=======
-global $db = new Database();
->>>>>>> 7bf7233 (Finished guest side of functions.php)
-=======
-$db = new Database();
->>>>>>> parent of 7bf7233 (Finished guest side of functions.php)
-// get current guest ID
-function get_id($data) {
-    $id = $data->query("select * from payment order by guest_ID desc limit 1")->fetch(PDO::FETCH_NUM);
-    $id = $id[0];
-    $id++;
-    return $id;
-}
+
+// Client based data
 function card_check($num) {
     $validator = new CreditCardValidator();
     return $validator->isValid($num);
 }
-function card_update($num, $data) {
+function card_update($num) {
     //MUST CALL AFTER USER ADDED TO CONTACT
+    global $db;
     $exists = false;
     $valid = card_check($num);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    $id = get_id();
->>>>>>> 7bf7233 (Finished guest side of functions.php)
-=======
-    $id = get_id($data);
->>>>>>> parent of 7bf7233 (Finished guest side of functions.php)
+    $id = $db->query("select * from payment where card_Num='$num'")->fetch(PDO::FETCH_NUM);
     if ($valid == true) {
-        if ($data->query("select * from payment where card_Num='$num'")->fetch(PDO::FETCH_NUM) == 0) {
+        if ($id != 0 || $id != null) {
            $exists = true;
         }           
     }
-    if ($exists) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-       $db->query("insert into payment (card_Num) value ($num)");
-=======
+    if (!$exists) {
        $db->query("insert into payment (guest_ID, card_Num) values ($id, $num)");
->>>>>>> 7bf7233 (Finished guest side of functions.php)
     }
-    
 }
 function clean_email($email) {
   $clean_email = filter_var($email,FILTER_SANITIZE_EMAIL);
   return $clean_email;
 }
-<<<<<<< HEAD
 function clean_string($data) {
   $out = filter_var($data, FILTER_SANITIZE_STRING);
   return $out;
 }
 function contact_update($name, $email) {
-    $name = clean_string($name);
+    global $db;
+    $name = explode(" ", clean_string($name));
     $email = clean_email($email);
-    $db->query("insert into guest_Contact (name, email) values ($name, $email)");
+    $db->query("insert into guest_Contact (first_Name, last_Name, email) values ($name[0], $name[1] $email)");
 }
 function checkin($in, $out) {
+    global $db;
     $room_num = rand(0, 500);
     $db->query("insert into booking (check_In, check_Out, room_Num) values ($in, $out, $room_num)");
 }
-function client_info($name, $mail, $in, $out, $num) {
-    contact_update($name, $mail);
+function client_info($name, $email, $in, $out, $num) {
+    contact_update($name, $email);
     checkin($in, $out);
     card_update($num);
-
-=======
-function clean_string($in) {
-  $out = filter_var($in, FILTER_SANITIZE_STRING);
+    return true;
 }
-function name_update($name, $email) {
-    $name = clean_string($name);
-    $email = clean_email($email);
-    $data->query("insert into guest_Contact (name, email) values ($name, $email)");
->>>>>>> 7bf7233 (Finished guest side of functions.php)
-}
-=======
-       $data->query("insert into payment (guest_ID, card_Num) values ($id, $num)");
-    }
-    
-}
->>>>>>> parent of 7bf7233 (Finished guest side of functions.php)

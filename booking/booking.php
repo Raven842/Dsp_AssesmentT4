@@ -1,14 +1,15 @@
 <?php 
-// requires function
-//require "functions.php";
 
-var_dump($_POST);
-//$checkIn = $_POST["checkIn"]; 
-//$checkOut = $_POST["checkOut"];
-//$mail = $_POST["mail"];
-//$name = $_POST["name"];
-//$cardNum = $_POST["cardNum"];
+require "../php/functions.php";
+
+$checkIn = $_POST["in"]; 
+$checkOut = $_POST["out"];
+$name = $_POST["name"];
+$mail = $_POST["mail"];
+$cardNum = $_POST["num"];
+$num = card_check($cardNum);
 
 // submission of data
-//client_info($name, $mail, $checkIn, $checkOut, $cardNum);
+client_info($name, $mail, $checkIn, $checkOut, $cardNum);
+
 
