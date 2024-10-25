@@ -42,33 +42,33 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Check In</span>
-										<input class="form-control" type="date" required>
+										<input class="form-control" type="date" name="in"required>
 									</div>
 									<span class="in-out hidden-xs hidden-sm">&#8652;</span>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Check out</span>
-										<input class="form-control" type="date" required>
+										<input class="form-control" type="date" name="out" required>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<span class="form-label">Name</span>
-									<input class="form-control" type="text" required>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Name</span>
+										<input class="form-control" type="text" name="name" required>
+									</div>
 								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<span class="form-label">Email</span>
-									<input class="form-control" type="email" required>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Email</span>
+										<input class="form-control" type="email" name="mail" required>
+									</div>
 								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<span class="form-label">Card Numver</span>
-									<input class="form-control" type="text" required>
+								<div class="col-md-6">
+									<div class="form-group">
+										<span class="form-label">Card Number</span>
+										<input class="form-control" type="text" name="num" required>
+									</div>
 								</div>
 							</div>
 								<div class="col-md-3">
